@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest",
     "start": "node ./src/multiUrlLoader.js data/feeds.txt",
-    "lint": "standard --fix"
+    "lint": "standard --fix",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,8 @@
     "azure-search": "0.0.20",
     "node-podcast-parser": "^2.2.0",
     "npm": "^6.1.0",
-    "request": "^2.87.0"
+    "request": "^2.87.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
@@ -32,5 +35,6 @@
   },
   "engines": {
     "node": "8.9.4"
-  }
+  },
+  "snyk": true
 }
