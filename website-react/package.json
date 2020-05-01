@@ -11,7 +11,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.0",
     "react-sortable-hoc": "^0.8.3",
-    "styled-components": "^3.3.0"
+    "styled-components": "^3.3.0",
+    "snyk": "^1.316.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,7 +24,9 @@
     "e2e": "cypress run",
     "e2eRecord": "cypress run --record",
     "ci": "start-server-and-test start http://localhost:3000 e2eRecord",
-    "lint": "standard --fix"
+    "lint": "standard --fix",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "devDependencies": {
     "cypress": "^3.0.1",
@@ -40,9 +43,13 @@
     "ignore": [
       "/build"
     ],
-    "globals": [ "cy", "Cypress" ],
+    "globals": [
+      "cy",
+      "Cypress"
+    ],
     "env": {
       "jest": true
     }
-  }
+  },
+  "snyk": true
 }
